@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash[:notice] =  "logged in!!"
     else
       redirect_to '/login'
-      flash[:error] = "error: can't log in "
+      flash[:alert] = "error: can't log in "
     end
 
   end

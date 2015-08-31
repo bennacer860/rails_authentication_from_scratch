@@ -10,8 +10,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new params_user
     if @user.save
-      redirect_to root_path, notice: "Successfully created a user "
+      flash[:notice] = "Successfully created a user "
+      redirect_to root_path
     else
+      flash[:alert] = "A problem happened with user creation"
       render :new
     end
   end
